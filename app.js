@@ -8,9 +8,9 @@ var session = require('express-session');
 var SessionStore = require('express-mysql-session');
 var ejs = require('ejs');
 
-var routes = require('./routes/index');
+var login = require('./routes/login');
 var users = require('./routes/users');
-var regist = require('./routes/regist');
+var reg = require('./routes/reg');
 var main = require('./routes/main');
 var config = require('./config.json');
 
@@ -36,9 +36,9 @@ var sessionConfig = config.session;
 sessionConfig.store =  new SessionStore(options);
 app.use(session(sessionConfig));
 
-app.use('/', routes);
+app.use('/', login);
 app.use('/users', users);
-app.use('/regist', regist);
+app.use('/reg', reg);
 app.use('/main', main);
 
 
