@@ -29,7 +29,7 @@ router.post('/',function(req, res) {
 
       if (results.length != 0 && results[0]['num'] > 0) {
         return res.json({
-          msgCode: -1,
+          msgCode: -2,
           message: '用户名已存在'
         })
       }
