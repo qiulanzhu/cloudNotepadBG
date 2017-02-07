@@ -1,0 +1,24 @@
+{
+  "sessionStone": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "Qy2016",
+    "database": "cloudNotepad"
+  },
+  "session": {
+    "key": "session_cookie_name",
+    "secret": "cloudNotepadSecret",
+    "name": "cloudNotepadSid",
+    "cookie": {},
+    "resave": false,
+    "saveUninitialized": true
+  },
+  "mysql": {
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "Qy2016",
+    "database": "cloudNotepad",
+    "port": 3306
+  }
+}
