@@ -21,7 +21,7 @@ User.prototype.userSave = function save(callback){
     username : this.username,
     userpwd : this.userpwd
   };
-  var INSERT_USER= "INSERT INTO USERINFO (USERID,USERNAME,USERPWD) VALUES (0,?,?)";
+  var INSERT_USER= "INSERT INTO userinfo (userid,username,userpwd) VALUES (0,?,?)";
   pool.getConnection(function(err,connection){
     connection.query(INSERT_USER,[user.username,user.userpwd],function(err,result){
       if(err){
@@ -40,7 +40,7 @@ User.prototype.userNum = function(username, callback) {
   pool.getConnection(function(err,connection){
     console.log("getConnection");
     console.log("getUserNumByName");
-    var QUERY_Num = "SELECT COUNT(1) AS num FROM USERINFO WHERE USERNAME = ?";
+    var QUERY_Num = "SELECT COUNT(1) AS num FROM userinfo WHERE username = ?";
     connection.query(QUERY_Num, [username], function (err, result) {
       if (err) {
         console.log("SELECT_NUM Error: " + err.message);
@@ -57,7 +57,7 @@ User.prototype.userInfo = function(callback){
     username : this.username,
     userpwd : this.userpwd
   };
-  var QUERY_LOGIN ="SELECT * FROM USERINFO WHERE USERNAME = ?";
+  var QUERY_LOGIN ="SELECT * FROM userinfo WHERE username = ?";
   pool.getConnection(function(err,connection){
     connection.query(QUERY_LOGIN,[user.username],function(err,result){
       if (err) {
