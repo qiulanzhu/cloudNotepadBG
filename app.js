@@ -36,7 +36,7 @@ var sessionConfig = config.session;
 sessionConfig.store =  new SessionStore(options);
 app.use(session(sessionConfig));
 
-app.use('/', login);
+app.use('/login', login);
 app.use('/users', users);
 app.use('/reg', reg);
 app.use('/main', main);
